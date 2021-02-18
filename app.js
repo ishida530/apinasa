@@ -63,6 +63,7 @@ input.addEventListener("change", (e) => {
         .then(function (response) {
           console.log(response);
           let urlNasa = response.config.url;
+        wrapper.setAttribute("style","display:flex !important");
           const img = document.createElement("img");
           const headline = document.createElement("h2");
           const divWrapper = document.createElement("div");
