@@ -68,12 +68,12 @@ input.addEventListener("change", (e) => {
           const headline = document.createElement("h2");
           const divWrapper = document.createElement("div");
           img.classList.add("nasaImg");
+          img.setAttribute("src", `${urlNasa}`);
           divWrapper.classList.add("container");
           wrapper.appendChild(divWrapper);
           headline.innerText = inputCity;
           divWrapper.appendChild(headline);
           divWrapper.appendChild(img);
-          img.setAttribute("src", `${urlNasa}`);
         })
         .catch(function (error) {   
         console.log(error);
