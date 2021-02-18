@@ -2,54 +2,36 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <meta charset="utf-8" />
-    <title>Place the geocoder input outside the map</title>
+    <title>Api NASA</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+
     <script
         src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
     <link rel="stylesheet"
         href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
         type="text/css" />
-    <!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-
-
-
     <div id="geocoder" class="geocoder finder"></div>
-
-
 
     <button class="accordion">MapBox</button>
     <div class="panel">
         <div id="map"></div>
-
     </div>
     <button class="accordion" id="btnWrapper">Photo from NASA</button>
-    <div class="panel" id="wrapper" style="display: flex !important;">
-
-
-    </div>
-
-
-
-
-
-
+    <div class="panel" id="wrapper" style="display: flex"></div>
 
     <script src="app.js"></script>
-
-
 </body>
 
 </html>
