@@ -2,11 +2,11 @@ const wrapper = document.getElementById("wrapper");
 const input = document.querySelector(".finder");
 let acc = document.getElementsByClassName("accordion");
 
-let i;
+let i = 0;
 var x, y;
-var inputCity;
+var inputCity, inputCountry;
 
-for (i = 0; i < acc.length; i++) {
+for (let i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function () {
     this.classList.toggle("active");
     let panel = this.nextElementSibling;
@@ -35,9 +35,8 @@ document.getElementById("geocoder").appendChild(geocoder.onAdd(map));
 
 input.addEventListener("change", (e) => {
   inputCity = e.target.value;
-
   let params = {
-    city: inputCity,
+    q: inputCity,
     format: "json",
   };
   axios
@@ -48,6 +47,9 @@ input.addEventListener("change", (e) => {
       x = response.data[0].lat;
       y = response.data[0].lon;
 
+      i++;
+      if (i !== 1) return;
+
       var params = {
         lon: y,
         lat: x,
@@ -55,15 +57,17 @@ input.addEventListener("change", (e) => {
       apiKey = "UBQDIH1h1LCEG7ONpSB5JLLa9lckINJ0FCHnPif0";
       axios
         .get(
+          //   `https://api.nasa.gov/planetary/earth/assets?lon=${y}&lat=${x}&date=2018-01-01&&dim=0.10&api_key=${apiKey}`,
           `https://api.nasa.gov/planetary/earth/imagery?lon=${y}&lat=${x}&date=2014-02-01&api_key=${apiKey}`,
           {
             params: params,
           }
         )
         .then(function (response) {
+          i = 0;
           console.log(response);
           let urlNasa = response.config.url;
-          wrapper.setAttribute("style","display:flex !important");
+          wrapper.setAttribute("style", "display:flex !important");
           const img = document.createElement("img");
           const headline = document.createElement("h2");
           const divWrapper = document.createElement("div");
@@ -74,15 +78,19 @@ input.addEventListener("change", (e) => {
           headline.innerText = inputCity;
           divWrapper.appendChild(headline);
           divWrapper.appendChild(img);
+          inputCity.value = "";
+          return;
         })
-        .catch(function (error) {   
-        console.log(error);
-    })
+        .catch(function (error) {
+          console.log(error);
+        })
         .then(function () {});
     })
 
     .catch(function (error) {
       console.log(error);
-})
+      alert("error, wrong latitude or longitude, please try again");
+      return;
+    })
     .then(function () {});
 });
