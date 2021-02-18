@@ -70,17 +70,18 @@ input.addEventListener("change", (e) => {
           img.classList.add("nasaImg");
           divWrapper.classList.add("container");
           wrapper.appendChild(divWrapper);
-
           headline.innerText = inputCity;
           divWrapper.appendChild(headline);
-
           divWrapper.appendChild(img);
           img.setAttribute("src", `${urlNasa}`);
         })
-        .catch(function (error) {})
+        .catch(function (error) {    console.log(error);
+})
         .then(function () {});
     })
 
-    .catch(function (error) {})
+    .catch(function (error) {
+      console.log(error);
+})
     .then(function () {});
 });
