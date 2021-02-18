@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.7s;
+  font-size: 24px;
+}
+.accordion:hover {
+  font-weight: 500;
+  background-color: grey;
+  color: white;
+}
+
+.active {
+  background-color: #ccc;
+}
+
+.panel {
+  width: 100%;
+  padding: 0 0px;
+  height: 100%;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  transition: 0.4s;
+  background-color: #eee;
+  display: flex;
+}
+
+#map {
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+}
+body {
+  background-color: #eee;
+}
+.geocoder {
+  position: absolute;
+  z-index: 1;
+  width: 12%;
+  right: 10%;
+  margin-left: -10%;
+  top: 10px;
+}
+.mapboxgl-ctrl-geocoder {
+  min-width: 100%;
+}
+
+#wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+.nasaImg {
+  margin-top: 25px;
+
+  padding: 0px;
+  width: 100%;
+  height: 300px;
+  transition: all 0.4s ease-in-out;
+}
+.nasaImg:hover {
+  transform: scale(1.1);
+  z-index: -4;
+}
+h2 {
+  text-align: center;
+  font-size: 15px;
+  z-index: 6;
+}
+#wrapper div {
+  width: 25%;
+  margin: 0 !important;
+}
+.container {
+  margin: 0 0 0 0;
+}
