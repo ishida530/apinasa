@@ -63,7 +63,7 @@ input.addEventListener("change", (e) => {
         .then(function (response) {
           console.log(response);
           let urlNasa = response.config.url;
-        wrapper.setAttribute("style","display:flex !important");
+          wrapper.setAttribute("style","display:flex !important");
           const img = document.createElement("img");
           const headline = document.createElement("h2");
           const divWrapper = document.createElement("div");
@@ -75,8 +75,9 @@ input.addEventListener("change", (e) => {
           divWrapper.appendChild(img);
           img.setAttribute("src", `${urlNasa}`);
         })
-        .catch(function (error) {    console.log(error);
-})
+        .catch(function (error) {   
+        console.log(error);
+    })
         .then(function () {});
     })
 
