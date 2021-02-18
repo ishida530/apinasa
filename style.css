@@ -59,7 +59,7 @@ body {
 
 #wrapper {
   display: flex;
-  flex-wrap: nowrap;
+    flex-wrap: wrap;
   height: 100%;
 }
 .nasaImg {
